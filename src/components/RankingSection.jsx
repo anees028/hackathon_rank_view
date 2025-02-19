@@ -7,7 +7,6 @@ const RankingSection = ({ title, category }) => {
 
   return (
     <div className={`ranking-section ${category.fontColor}`}>
-      {/* <h2 >{icon} {title}</h2> */}
       <h2 className="section-title">
         <img src={ title === 'Asset Temperature' ? `./temperature_colored.svg` : `./frame_colored.svg` } alt="icon" className="section-icon" /> {title}
       </h2>

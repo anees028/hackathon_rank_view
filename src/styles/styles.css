@@ -12,6 +12,7 @@
   padding: 20px;
   font-weight: 500;
   font-size: xx-large;
+  pointer-events: none;
 }
 
 .logo {
@@ -25,6 +26,7 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  pointer-events: none;
 }
 
 .ranking-section {
@@ -60,7 +62,7 @@
 
 .teams-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Two item cards per row */
   gap: 10px;
 } 
 
