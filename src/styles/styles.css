@@ -123,3 +123,9 @@
   width: 18px;
   height: 18px;
 }
+
+.footer {
+  align-items: center;
+  align-content: center;
+  pointer-events: none;
+}
