@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Hackathon 2025 View ⚡️ 
+## A clean code for this application is here. Here you can see the view of single page app. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"> 
+  <kbd>
+<img src="./public/page_view.png"></img>
+  </kbd>
+</p>
+
 
 ## Available Scripts
 
