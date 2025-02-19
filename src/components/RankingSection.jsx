@@ -14,6 +14,7 @@ const RankingSection = ({ title, category }) => {
         {category.items.map((item, index) => (
           <RankingCard
             key={index}
+            title={title}
             rank={index + 1}
             name={item.name}
             score={item.score}
