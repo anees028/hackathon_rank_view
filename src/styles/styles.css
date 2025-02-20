@@ -33,28 +33,35 @@
   overflow: hidden;
 }
 
-.ranking-section {
+.ranking-section-temperature {
   flex: 1 1 45%;
-  background: #f8f8f8;
+  background-color: #f8f8f8; /* Background color */
+  background-image: url('../../public/electricity_tower.png'); /* PNG from public folder */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 80% 90%;  /* Set specific width & height */
   padding: 20px;
   max-width: 800px;
   border-radius: 10px;
-  height: 100%; /* Makes sure both sections take full height */
+  height: 100%; /* Ensures both sections take full height */
   display: flex;
   flex-direction: column;
 }
 
-.ranking-section-temperature{
-  background: url('../../public/electricity_tower.svg') no-repeat center center;
-  background-size: 600px; 
-  background-position: right;
+.ranking-section-health {
+  flex: 1 1 45%;
+  background-color: #f8f8f8; /* Background color */
+  background-image: url('../../public/fan.png'); /* PNG from public folder */
+  background-repeat: no-repeat;
+  background-position: center right ;
+  background-size: 70% 90%;  /* Set specific width & height */
+  padding: 20px;
+  max-width: 800px;
+  border-radius: 10px;
+  height: 100%; /* Ensures both sections take full height */
+  display: flex;
+  flex-direction: column;
 }
-.ranking-section-health{
-  background: url('../../public/fan.svg') no-repeat center center;
-  background-size: 550px; 
-  background-position: right;
-} 
-
 
 .section-icon{
   width: 25px;

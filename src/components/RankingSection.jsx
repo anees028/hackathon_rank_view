@@ -6,7 +6,7 @@ import temperature from '../assets/temperature.svg';
 const RankingSection = ({ title, category }) => {
 
   return (
-    <div className={`ranking-section ${category.fontColor} ${title === 'Asset Temperature' ? "ranking-section-temperature" : "ranking-section-health"} `}>
+    <div className={`${category.fontColor} ${title === 'Asset Temperature' ? "ranking-section-temperature" : "ranking-section-health"} `}>
       <h2 className="section-title">
         <img src={ title === 'Asset Temperature' ? `./temperature_colored.svg` : `./frame_colored.svg` } alt="icon" className="section-icon" /> {title}
       </h2>
