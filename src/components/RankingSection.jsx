@@ -6,7 +6,7 @@ import temperature from '../assets/temperature.svg';
 const RankingSection = ({ title, category }) => {
 
   return (
-    <div className={`ranking-section ${category.fontColor}`}>
+    <div className={`ranking-section ${category.fontColor} ${title === 'Asset Temperature' ? "ranking-section-temperature" : "ranking-section-health"} `}>
       <h2 className="section-title">
         <img src={ title === 'Asset Temperature' ? `./temperature_colored.svg` : `./frame_colored.svg` } alt="icon" className="section-icon" /> {title}
       </h2>
@@ -15,7 +15,7 @@ const RankingSection = ({ title, category }) => {
           <RankingCard
             key={index}
             title={title}
-            rank={index + 1}
+            rank={item.id}
             name={item.name}
             score={item.score}
             icon={ title === 'Asset Temperature' ? temperature : frame }

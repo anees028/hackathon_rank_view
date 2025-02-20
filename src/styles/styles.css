@@ -1,8 +1,11 @@
 .container {
   max-width: 1800px;
+  height: 95vh; /* Full viewport height */
   margin: auto;
   text-align: center;
   font-family: "Montserrat", serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -26,7 +29,8 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  pointer-events: none;
+  flex-grow: 1; /* Take remaining space */
+  overflow: hidden;
 }
 
 .ranking-section {
@@ -35,7 +39,22 @@
   padding: 20px;
   max-width: 800px;
   border-radius: 10px;
+  height: 100%; /* Makes sure both sections take full height */
+  display: flex;
+  flex-direction: column;
 }
+
+.ranking-section-temperature{
+  background: url('../../public/electricity_tower.svg') no-repeat center center;
+  background-size: 600px; 
+  background-position: right;
+}
+.ranking-section-health{
+  background: url('../../public/fan.svg') no-repeat center center;
+  background-size: 550px; 
+  background-position: right;
+} 
+
 
 .section-icon{
   width: 25px;
@@ -49,7 +68,6 @@
   gap: 8px; /* Spacing between icon and title */
   font-size: 20px;
   font-weight: 500;
-  /* color: #d32f2f; Red color */
   margin-bottom: 20px;
 }
 
@@ -62,9 +80,26 @@
 
 .teams-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Two item cards per row */
+  grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Two columns */
   gap: 10px;
+  max-height: calc(100vh - 200px); /* Adjust height dynamically */
+  overflow-y: auto;
+  padding-right: 8px; /* Prevent scrollbar overlap */
 } 
+
+/* Optional: Improve scrollbar styling */
+.teams-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.teams-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+.teams-container::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
 
 .ranking-card {
   display: flex;
@@ -75,8 +110,7 @@
   padding: 12px 16px;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%; /* Adjust as per need */
-  margin-bottom: 5px;
+  width: 90%; /* Adjust as needed */
 }
 
 .rank-temperature{
