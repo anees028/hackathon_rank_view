@@ -122,11 +122,6 @@
   width: 90%; /* Adjust as needed */
 }
 
-.ranking-card-background{
-  background-image: url('../../public/calque_1.svg'); /* PNG from public folder */
-  background-repeat: no-repeat;
-  background-position: right top;
-}
 
 .rank-temperature{
   background: #fbe9e7; /* Light red background */

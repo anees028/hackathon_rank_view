@@ -2,7 +2,7 @@ import React from "react";
 
 const RankingCard = ({ title, rank, name, score, icon }) => {
   return (
-    <div className="ranking-card ranking-card-background">
+    <div className="ranking-card">
       <span className={`${title === 'Asset Temperature' ? "rank-temperature" : "rank-health"}`}>{rank}</span>
       <div className="team-info" style={{flexGrow: '1'}}>
         <span className="team-name">{name}</span>
