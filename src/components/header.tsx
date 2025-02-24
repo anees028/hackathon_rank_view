@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+export const Header : React.FC<any> = () => {
   return (
     <div className="header">
         <img src="./hackhaton_logo.svg" alt="Hackathon Logo" className="logo" />
@@ -10,4 +10,3 @@ const Header = () => {
   );
 };
 
-export default Header;

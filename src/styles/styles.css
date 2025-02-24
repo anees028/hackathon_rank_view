@@ -1,189 +1,141 @@
-.container {
-  max-width: 100vw;
-  height: 95vh; /* Full viewport height */
-  margin: auto;
-  text-align: center;
-  font-family: "Montserrat", serif;
-  display: flex;
-  flex-direction: column;
-  background-image: url('../../public//Calque_1_bg.svg');
-  background-repeat: no-repeat;
-  background-position: left center;
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  font-weight: 500;
-  font-size: xx-large;
-  pointer-events: none;
-}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: xx-large;
+    pointer-events: none;
+  }
+  
+  .logo {
+    height: 80px;
+    width: 100px;
+  }
+  
+  .ranking-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    /* flex-grow: 1; Take remaining space */
 
-.logo {
-  height: 80px;
-  width: 100px;
-}
-
-.ranking-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  flex-grow: 1; /* Take remaining space */
-}
-
-.ranking-section-temperature {
-  flex: 1 1 45%;
-  background-color: #f8f8f8; /* Background color */
-  background-image: url('../../public/electricity_tower.png'); /* PNG from public folder */
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 80% 90%;  /* Set specific width & height */
-  padding: 20px;
-  max-width: 800px;
-  border-radius: 10px;
-  height: 100%; /* Ensures both sections take full height */
-  display: flex;
-  flex-direction: column;
-}
-
-.ranking-section-health {
-  flex: 1 1 45%;
-  background-color: #f8f8f8; /* Background color */
-  background-image: url('../../public/fan.png'); /* PNG from public folder */
-  background-repeat: no-repeat;
-  background-position: center right ;
-  background-size: 70% 90%;  /* Set specific width & height */
-  padding: 20px;
-  max-width: 800px;
-  border-radius: 10px;
-  height: 100%; /* Ensures both sections take full height */
-  display: flex;
-  flex-direction: column;
-}
-
-.section-icon{
-  width: 25px;
-  height: 25px;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* Spacing between icon and title */
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.temperature_color{
-  color: #CC1D1D
-}
-.health_color{
-  color: #1F717D
-}
-
-.teams-container{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Two columns */
-  gap: 10px;
-  max-height: calc(100vh - 200px); /* Adjust height dynamically */
-  overflow-y: auto;
-  padding-right: 8px; /* Prevent scrollbar overlap */
-} 
-
-/* Optional: Improve scrollbar styling */
-.teams-container::-webkit-scrollbar {
-  width: 6px;
-}
-
-.teams-container::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 6px;
-}
-
-.teams-container::-webkit-scrollbar-track {
-  background: #f8f8f8;
-}
-
-.ranking-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  height: 50px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%; /* Adjust as needed */
-}
-
-
-.rank-temperature{
-  background: #fbe9e7; /* Light red background */
-  color: #CC1D1D; /* Dark red text */
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 9px;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.rank-health{
-  background: #E4F0F2; /* Light blue background */
-  color: #1F717D; /* Dark blue text */
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 9px;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.team-info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding-left: 12px;
-  margin-left: 5px;
-}
-
-.team-name {
-  font-weight: 700;
-  font-size: 'lg';
-  color: #222;
-  text-align: left;
-  margin-top: -6px;
-  margin-bottom: 6px;
-}
-
-.score {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-}
-
-.score-icon {
-  margin-right: 7px;
-  width: 18px;
-  height: 18px;
-}
-
-.footer {
-  align-items: center;
-  align-content: center;
-  pointer-events: none;
-}
+  }
+  
+  .ranking-section-temperature {
+    flex: 1 1 45%;
+    background-color: #f8f8f8; /* Background color */
+    background-image: url('../../electricity_tower.png'); /* PNG from public folder */
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 80% 90%;  /* Set specific width & height */
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%; /* Ensures both sections take full height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ranking-section-health {
+    flex: 1 1 45%;
+    background-color: #f8f8f8; /* Background color */
+    background-image: url('../../fan.png'); /* PNG from public folder */
+    background-repeat: no-repeat;
+    background-position: center right ;
+    background-size: 70% 90%;  /* Set specific width & height */
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 10px;
+    height: 100%; /* Ensures both sections take full height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-icon{
+    width: 25px;
+    height: 25px;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Spacing between icon and title */
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .temperature_color{
+    color: #CC1D1D
+  }
+  .health_color{
+    color: #1F717D
+  }
+  
+  .teams-container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Two columns */
+    gap: 10px;
+    max-height: calc(100vh - 200px); /* Adjust height dynamically */
+    overflow-y: auto;
+    padding-right: 8px; /* Prevent scrollbar overlap */
+  } 
+  
+  /* Optional: Improve scrollbar styling */
+  .teams-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .teams-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 6px;
+  }
+  
+  .teams-container::-webkit-scrollbar-track {
+    background: #f8f8f8;
+  }
+  
+  
+  .rank{
+    font-family: "Montserrat", serif;
+  }
+  
+  .team-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 12px;
+    margin-left: 5px;
+  }
+  
+  .team-name {
+    font-weight: 700;
+    font-size: 'lg';
+    color: #222;
+    text-align: left;
+    margin-top: -6px;
+    margin-bottom: 6px;
+  }
+  
+  .score {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .score-icon {
+    margin-right: 7px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .footer {
+    justify-content: center;
+    align-content: center;
+  }
+  
