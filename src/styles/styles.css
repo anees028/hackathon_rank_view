@@ -17,7 +17,7 @@
   .ranking-sections {
     display: flex;
     flex-wrap: nowrap;
-    justify-content:space-evenly;
+    justify-content:center;
     gap: 20px;
     padding: 20px;
     width: 100%;
