@@ -1,0 +1,4 @@
+.card {
+    @apply flex items-center rounded-lg w-full shadow-md;
+    @apply justify-between bg-white px-3 py-3;
+}
