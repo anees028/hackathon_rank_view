@@ -16,22 +16,23 @@
   
   .ranking-sections {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
     gap: 20px;
     padding: 20px;
+    width: 100%;
     /* flex-grow: 1; Take remaining space */
 
   }
   
   .ranking-section-temperature {
-    flex: 1 1 45%;
     background-color: #f8f8f8; /* Background color */
     background-image: url('../../electricity_tower.png'); /* PNG from public folder */
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: 80% 90%;  /* Set specific width & height */
+    background-size: 60% 90%;  /* Set specific width & height */
     padding: 20px;
+    width: 45%;
     border-radius: 10px;
     height: 100%; /* Ensures both sections take full height */
     display: flex;
@@ -39,14 +40,13 @@
   }
   
   .ranking-section-health {
-    flex: 1 1 45%;
     background-color: #f8f8f8; /* Background color */
     background-image: url('../../fan.png'); /* PNG from public folder */
     background-repeat: no-repeat;
     background-position: center right ;
-    background-size: 70% 90%;  /* Set specific width & height */
+    background-size: 50% 90%;  /* Set specific width & height */
     padding: 20px;
-    max-width: 800px;
+    width: 45%;
     border-radius: 10px;
     height: 100%; /* Ensures both sections take full height */
     display: flex;
@@ -135,7 +135,10 @@
   }
   
   .footer {
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center;
+    align-content: center; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
   
