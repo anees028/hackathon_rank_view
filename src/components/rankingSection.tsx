@@ -2,31 +2,30 @@ import React from "react";
 import RankingCard from "./rankingCard";
 import frame from '../assets/frame.svg';
 import temperature from '../assets/temperature.svg';
-import { Category } from "../types";
+import { RankingSectionProps } from "../types";
 import clsx from "clsx";
 
-interface RankingSectionProps {
-  title: string;
-  category: Category;
-  type: "temperature" | "health";
-}
 
-const RankingSection: React.FC<RankingSectionProps> = ({ title, category, type }) => {
-  
+const RankingSection: React.FC<RankingSectionProps> = ({ title, teams, type }) => {
   return (
-    <div className={`${category.fontColor} ${type === 'temperature' ? "ranking-section-temperature" : "ranking-section-health"} `}>
-      <h2 className={clsx("section-title",  type === "temperature" ? "text-red-500" : "text-petrol-600")}>
-        <img src={ title === 'Asset Temperature' ? `./temperature_colored.svg` : `./frame_colored.svg` } alt="icon" className="section-icon" /> {title}
+    <div className={`${type === "temperature" ? "ranking-section-temperature" : "ranking-section-health"}`}>
+      <h2 className={clsx("section-title", type === "temperature" ? "text-red-500" : "text-petrol-600")}>
+        <img
+          src={type === "temperature" ? `./temperature_colored.svg` : `./frame_colored.svg`}
+          alt="icon"
+          className="section-icon"
+        />
+        {title}
       </h2>
       <div className="teams-container">
-        {category.items.map((item, index) => (
+        {teams.map((team, index) => (
           <RankingCard
-            key={index}
+            key={team.id}
             title={title}
-            rank={item.id}
-            name={item.name}
-            score={item.score}
-            icon={ title === 'Asset Temperature' ? temperature : frame }
+            rank={index + 1}
+            name={team.teamName}
+            score={type === "temperature" ? team.temperatureScore.toLocaleString() : team.healthScore.toLocaleString()}
+            icon={type === "temperature" ? temperature : frame}
           />
         ))}
       </div>
