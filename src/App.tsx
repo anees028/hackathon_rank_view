@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${serverUrl}hackathon_rank_data`);
+      const response = await fetch(serverUrl);
       const text = await response.text();
       console.log("Raw API Response:", text);
       const result: TeamData[] = JSON.parse(text);
