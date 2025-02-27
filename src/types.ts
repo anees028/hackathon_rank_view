@@ -12,3 +12,11 @@ export interface RankingSectionProps {
   type: "temperature" | "health";
 }
 
+export interface RankingCardProps {
+  title: string;
+  rank: number ;
+  name: string;
+  score: string;
+  icon: string;
+}
+

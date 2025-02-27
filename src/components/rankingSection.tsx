@@ -7,6 +7,7 @@ import clsx from "clsx";
 
 
 const RankingSection: React.FC<RankingSectionProps> = ({ title, teams, type }) => {
+
   return (
     <div className={`${type === "temperature" ? "ranking-section-temperature" : "ranking-section-health"}`}>
       <h2 className={clsx("section-title", type === "temperature" ? "text-red-500" : "text-petrol-600")}>
@@ -18,11 +19,11 @@ const RankingSection: React.FC<RankingSectionProps> = ({ title, teams, type }) =
         {title}
       </h2>
       <div className="teams-container">
-        {teams.map((team, index) => (
+        {teams.map((team) => (
           <RankingCard
             key={team.id}
             title={title}
-            rank={index + 1}
+            rank={team.id + 1}
             name={team.teamName}
             score={type === "temperature" ? team.temperatureScore.toLocaleString() : team.healthScore.toLocaleString()}
             icon={type === "temperature" ? temperature : frame}
