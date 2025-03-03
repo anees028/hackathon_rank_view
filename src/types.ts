@@ -1,20 +1,22 @@
-export type Item = {
-    id?: number; // Ensure id is always a number
-    name: string;
-    score: string;
-  };
-  
-  export type Category = {
-    title: string,
-    fontColor: string;
-    items: Item[];
-  };
+export interface TeamData {
+  id: number;
+  teamName: string;
+  temperatureScore: number;
+  healthScore: number;
+  calculatedOn: string;
+}
 
+export interface RankingSectionProps {
+  title: string;
+  teams: TeamData[];
+  type: "temperature" | "health";
+}
 
-  export type RankingCardProps = {
-    title: string;
-    rank: number | string | any;
-    name: string;
-    score: number | string;
-    icon: string;
-  }
+export interface RankingCardProps {
+  title: string;
+  rank: number ;
+  name: string;
+  score: string;
+  icon: string;
+}
+
