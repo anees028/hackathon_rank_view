@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Header : React.FC<any> = () => {
+export const Header : React.FC = () => {
   return (
     <div className="header">
         <img src="./hackhaton_logo.svg" alt="Hackathon Logo" className="logo" />

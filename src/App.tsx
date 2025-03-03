@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./styles/styles.css";
 import { Header } from "./components/header";
 import RankingSection from "./components/rankingSection";
@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await fetch(serverUrl);
       const text = await response.text();
@@ -28,15 +28,15 @@ const App: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  },[]);
 
   useEffect(() => {
     fetchData();
     const interval = setInterval(fetchData, 3 * 60000); // Refresh every 3 * 60(seconds) minute
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData]);
 
-  const transformTeamData = (data: any[]): TeamData[] => {
+  const transformTeamData = (data: TeamData[]): TeamData[] => {
     return data.map((team, index) => ({
       ...team,
       id: index, // Replace the existing string ID with the index order
@@ -59,7 +59,7 @@ const App: React.FC = () => {
   }
 
   const assignNewIds = (data: TeamData[]): TeamData[] => {
-    let result: TeamData[] = new Array(data.length);
+    const result: TeamData[] = new Array(data.length);
     let idCounter = 0;
 
     // Assign IDs to even indexes first

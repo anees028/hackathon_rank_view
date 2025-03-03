@@ -27,7 +27,7 @@
   
   .ranking-section-temperature {
     background-color: #f8f8f8; /* Background color */
-    background-image: url('../../electricity_tower.png'); /* PNG from public folder */
+    background-image: url('../assets/electricity_tower.png'); /* PNG from public folder */
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 60% 90%;  /* Set specific width & height */
@@ -41,7 +41,7 @@
   
   .ranking-section-health {
     background-color: #f8f8f8; /* Background color */
-    background-image: url('../../fan.png'); /* PNG from public folder */
+    background-image: url('../assets/fan.png'); /* PNG from public folder */
     background-repeat: no-repeat;
     background-position: center right ;
     background-size: 50% 90%;  /* Set specific width & height */
