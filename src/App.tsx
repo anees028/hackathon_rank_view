@@ -1,40 +1,38 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/styles.css";
 import { Header } from "./components/header";
 import RankingSection from "./components/rankingSection";
 import { TeamData } from "./types";
 import { Footer } from "./components/footer";
 
-const serverUrl = import.meta.env.VITE_SERVER_URL
+import { useQuery } from '@tanstack/react-query';
+import { getTeamsRanks } from "./services/apiRanks_backend";
+import ErrorMessage from "./components/errorMessage";
+import formatError from "./helpers/formatError";
 
 
 const App: React.FC = () => {
 
   const [teams, setTeams] = useState<TeamData[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const fetchData = useCallback(async () => {
-    try {
-      const response = await fetch(serverUrl);
-      const text = await response.text();
+  const {
+    isLoading,
+    data: teamData,
+    error,
+  } = useQuery ({
+    queryKey: ['teamRanks'],
+    refetchInterval: 3 * 60 * 1000 ,
+    queryFn: getTeamsRanks,
+  })
 
-      const result: TeamData[] = JSON.parse(text);
-      const transformedData = transformTeamData(result);
-      setTeams(transformedData);
-    } catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to fetch data");
-    } finally {
-      setLoading(false);
-    }
-  },[]);
 
   useEffect(() => {
-    fetchData();
-    const interval = setInterval(fetchData, 3 * 60000); // Refresh every 3 * 60(seconds) minute
-    return () => clearInterval(interval);
-  }, [fetchData]);
+    if(teamData){
+      setTeams(transformTeamData(teamData))
+    }
+  }, [teamData]);
+
+
 
   const transformTeamData = (data: TeamData[]): TeamData[] => {
     return data.map((team, index) => ({
@@ -83,11 +81,12 @@ const App: React.FC = () => {
   const health_list: TeamData[] = assignNewIds(sortedHealthTeams);
 
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <ErrorMessage message={formatError(error)}></ErrorMessage>
   if (teams.length === 0) return <p>No data available</p>;
 
   return (
+    
     <div className="container ml-auto mr-auto">
       <Header />
       <div className="ranking-sections">
